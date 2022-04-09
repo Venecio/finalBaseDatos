@@ -3,9 +3,9 @@
     margin: 0;
 }
 td{
-    padding: 70px;
-    
-  
+    padding: 45px;
+    font-weight: bold;
+    border-radius: 10px;
     color: black;
     font-size: medium;
 
