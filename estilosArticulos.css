@@ -2,19 +2,40 @@
     padding: 0;
     margin: 0;
 }
-td{
-    padding: 45px;
-    font-weight: bold;
-    border-radius: 10px;
-    color: black;
-    font-size: medium;
+.contenedor{
+    width: 100%;
+	max-width: 1400px;
+    margin: auto;
+    display: grid;
+    justify-content: center;
 
-    box-shadow: 5px 5px 5px #aaaaaa;
+
+}
+.carta-ropa{
+    border-radius: 10px;
+    padding: 50px;
+	font-weight: bold;
+	
+	overflow: hidden;
+   
+
+    border-style: dotted;
     
+    
+    background-repeat: no-repeat;
+    background-size: 100px;
+    background-position: center;
+
+    width: 200px;
+
 }
-tr{
-    margin-top: 20px;
+.carta-ropa .texto {
+    align-self: flex-end;
+    color: red;
+	
 }
-.divTabla{
-    text-align: center;
+.contenedor-ropa{
+    display:grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 20px;
 }
