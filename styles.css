@@ -44,29 +44,3 @@ footer{
     margin-top: 300px;
 }
 
-.slider{
-    width: 60%;
-    margin: auto;
-    overflow: hidden;
-}
-.slider ul{
-    padding: 0;
-    display: flex;
-    width: 200%;
-    animation: cambio 20s infinite;
-}
-.slider li{
-    list-style: none;
-    width: 100%;
-}
-.slider img{
-    width: 100%;
-}
-@keyframes cambio {
-    0% {margin-left:0;}
-    20% {margin-left:0;}
-
-    25% {margin-left:-100%;}
-    45% {margin-left:-100%;}
-
-}
