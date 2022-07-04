@@ -21,13 +21,10 @@
     position: relative;
     opacity: 95%;
     text-align: center;
-
-    
     background-repeat: no-repeat;
     background-size: cover;
-    font-family: ;
-    width:  400px;
-    height: 400px;
+    width:  350px;
+    height: 350px;
 }
 .carta-ropa{
     -webkit-transform: scale(1);
@@ -56,6 +53,21 @@
     gap: 20px;
 }
 body{
-    background-image: url(olga-thelavart-vS3idIiYxX0-unsplash.jpg);
+    background-image: url(./recursos/fondo.jpg);
      
+}
+
+/*Icono carrito */
+i{
+    
+   display: inline-block;
+   
+   
+}
+.carritoLi{
+    color: black;
+    
+    display:block;
+    
+
 }
