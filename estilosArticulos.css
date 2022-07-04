@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 *{
     padding: 0;
     margin: 0;
@@ -18,26 +19,36 @@
 	box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
 	overflow: hidden;
     position: relative;
-    
+    opacity: 95%;
+    text-align: center;
 
-    
     
     background-repeat: no-repeat;
-    background-size: 100px;
-    background-position: left;
-
-    width: 200px;
-
+    background-size: cover;
+    font-family: ;
+    width:  400px;
+    height: 400px;
 }
-.carta-ropa .texto {
-    align-self: flex-end;
-    color: red;
-	padding: 5px;
-    text-align: center;
+.carta-ropa{
+    -webkit-transform: scale(1);
+	transform: scale(1);
+	-webkit-transition: .3s ease-in-out;
+	transition: .3s ease-in-out;
+}
+.carta-ropa:hover{
+    -webkit-transform: scale(1.05);
+	transform: scale(1.05);
+}
+.texto a{
+   color: rgb(255, 255, 255);
+    font-family: 'Roboto', sans-serif;
+    font-size: 25px;
     position: absolute;
-    bottom: 0;
-    right: 0;
- 
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    
+
 }
 .contenedor-ropa{
     display:grid;
