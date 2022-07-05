@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>Registrar Usuario</title>
+</head>
+
+<body>
+    <form class="formulario2" action="registro.php" method="post">
+        <h1 class="titulo">Registrarse</h2>
+            <input class="input-register" type="text" name="username" placeholder="Usuario"
+                pattern="[A-Za-z0-9_-]{1,15}" required>
+            <input class="input-register" type="password" name="password" placeholder="Contraseña"
+                pattern="[A-Za-z0-9_-]{1,15}" required>
+            <input class="input-register" type="email" name="email" placeholder="Correo" required>
+            <input class="boton" type="submit" name="registro" value="Registrarme">
+    </form>
+
+</body>
+
+</html>

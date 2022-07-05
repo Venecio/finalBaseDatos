@@ -12,11 +12,12 @@
 </head>
 
 <body>
-
+    
     <div class="contenedor">
         <?php
+        
         require("../conexion/conexion.php");
-        $consulta = "SELECT * FROM productos WHERE producto_tipo = 'invierno'";
+        $consulta = "SELECT * FROM productos WHERE producto_tipo = 'calzado'";
         $result = mysqli_query($conexion, $consulta);
         while ($row = mysqli_fetch_array($result)) {
 
@@ -28,10 +29,12 @@
                 <?php echo $row['producto_nombre'] ?><br>
                 <?php echo $row['producto_talle'] ?><br>
                 <?php echo "$" . $row['producto_precio'] ?><br>
-                <?php echo '<a class="comprarbttn" href="' . htmlspecialchars("../carrito/carrito.php?id=" . urlencode($row['id_producto'])) . '" >Comprar</a>' ?>
+                <?php echo '<a class="comprarbttn" href="' . htmlspecialchars("../carrito/carrito.php?id=" . urlencode($row['id_producto'])) . '" >Comprar</a>'  ?>
+                
             </div>
         <?php
         }
+    print_r($_SESSION);
         ?>
     </div>
 

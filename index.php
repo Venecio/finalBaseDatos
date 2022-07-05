@@ -27,7 +27,11 @@
             <h2 class="fitoLogo">Tienda <span class="spanFito">Fito</span></h2>
             <li>Ofertas</li>
             <li>Contactame</li>
-            <i class="fas fa-shopping-cart"><li class="carritoLi">Carrito</li></i>
+            <a href="./carrito/historialcompras.php"><li ><i class="fas fa-history"></i>Compras</li></a>
+            <a href="./carrito/vercarrito.php"><i class="fas fa-shopping-cart"><li class="carritoLi">Carrito</li></i></a>
+            <li>Hola <?php
+            session_start();
+             echo $_SESSION['username']; ?></li>
         </ul>
     </nav>
     <div class="container">
@@ -85,7 +89,7 @@
             ), url('./recursos/zapas.jpg')">
 
                 <div class="texto">
-                    <a href="./productos/calzados.php">CALZADOS</a>
+                    <a href="./productos/sesiondestroy.php">CALZADOS</a>
                 </div>
             </div>
             <div class="carta-ropa" style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)

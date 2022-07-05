@@ -2,7 +2,7 @@
 $host="localhost";
 $username="";
 $password="";
-$bd_name="";
+$bd_name="tienda_fito";
 $conexion = mysqli_connect($host, $username, $password, $bd_name);
 
 if (!$conexion) {
