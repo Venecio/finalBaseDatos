@@ -1,3 +1,15 @@
+<?php
+require("./conexion/conexion.php");
+session_start();
+if (isset($_SESSION['username'])){
+$id_user = $_SESSION['id_user'];
+$consulta = "SELECT * FROM compras WHERE id_user = '$id_user' and estado_compra = 0";
+$resultado = mysqli_query($conexion, $consulta);
+$rows = mysqli_num_rows($resultado);
+}else{
+
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -20,18 +32,31 @@
 
 <body>
     <nav class="menuNavegacion">
-        <h3 href="" class="topAviso">El precio del envio varía según su localización</h3>
+        <h3 class="topAviso">El precio del envio varía según su localización</h3>
         <ul class="UlMenu">
-            <a href="index.html"><li>Inicio</li></a>
+            <a href="index.php"><li>Inicio</li></a>
             <li>Novedades</li>
             <h2 class="fitoLogo">Tienda <span class="spanFito">Fito</span></h2>
             <li>Ofertas</li>
             <li>Contactame</li>
-            <a href="./carrito/historialcompras.php"><li ><i class="fas fa-history"></i>Compras</li></a>
-            <a href="./carrito/vercarrito.php"><i class="fas fa-shopping-cart"><li class="carritoLi">Carrito</li></i></a>
-            <li>Hola <?php
-            session_start();
-             echo $_SESSION['username']; ?></li>
+            <li class="navOpcionUsuario"><a href="./carrito/historialcompras.php"><i class="fas fa-history"></i>Compras</a></li>
+           <li class="navOpcionUsuario"><a href="./carrito/vercarrito.php"><i class="fas fa-shopping-cart">Carrito <?php if (isset($_SESSION['username'])){ echo "(".$rows.")"; }else{}?></i></a></li>
+           <div class="dropdown">
+                <li class="dropbtn">Usuario</li>
+                <div class="dropdown-content">
+                    <?php
+                        if (!isset($_SESSION['username'])) {?>
+                            <a href="login/login.php">Ingresa</a>
+                            <a href="login/registrarse.html">Creá tu cuenta</a>
+                        <?php
+                        }else{?>
+                            <a href="carrito/historialcompras.php">Compras</a>
+                            <a href="login/cerrarsesion.php">Cerrar Sesion</a>
+                            <?php
+                        }
+                        ?>
+                </div>
+            </div>
         </ul>
     </nav>
     <div class="container">
@@ -89,7 +114,7 @@
             ), url('./recursos/zapas.jpg')">
 
                 <div class="texto">
-                    <a href="./productos/sesiondestroy.php">CALZADOS</a>
+                    <a href="./productos/calzados.php">CALZADOS</a>
                 </div>
             </div>
             <div class="carta-ropa" style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)

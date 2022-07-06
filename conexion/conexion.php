@@ -1,7 +1,7 @@
 <?php
 $host="localhost";
-$username="";
-$password="";
+$username="Venecio";
+$password="GQ<Yh{=w6T(p%b0#";
 $bd_name="tienda_fito";
 $conexion = mysqli_connect($host, $username, $password, $bd_name);
 

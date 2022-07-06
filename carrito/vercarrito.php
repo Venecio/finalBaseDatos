@@ -14,10 +14,10 @@ require("../conexion/conexion.php");
     <?php
     session_start();
     $id_user = $_SESSION['id_user'];
-    $consulta = "SELECT *
+    $consulta = "SELECT *, SUM(productos.producto_precio) as producto_precio2
                 FROM compras,productos,usuarios
                 WHERE compras.id_user = usuarios.id_user AND productos.id_producto = compras.id_producto 
-                AND compras.estado_compra = 0 AND compras.id_user = $id_user";
+                AND compras.estado_compra = 0 AND compras.id_user = $id_user GROUP BY productos.id_producto";
     $resultado = mysqli_query($conexion, $consulta);
     if (mysqli_num_rows($resultado) > 0) {
     ?>
@@ -41,7 +41,8 @@ require("../conexion/conexion.php");
                 <tr>
                     <td class="ctd"><?php echo $row['producto_nombre'] ?></td>
                     <td class="ctd"><?php echo $row['producto_talle'] ?></td>
-                    <td class="ctd"><?php echo "$" . $row['producto_precio'] ?></td>
+                    <td class="ctd"><?php echo "$" . $row['producto_precio2'] ?></td>
+                    
                     <td class="ctd"><?php echo '<a class="eliminar" href="' . htmlspecialchars("eliminarProducto.php?id_compra=" . urlencode($row['id_compra'])) . '" >Eliminar</a>' ?></td>
 
                 </tr>
