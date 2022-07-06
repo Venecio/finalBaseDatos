@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 06-07-2022 a las 17:52:37
+-- Tiempo de generación: 06-07-2022 a las 18:05:12
 -- Versión del servidor: 10.4.24-MariaDB
 -- Versión de PHP: 8.1.6
 
@@ -20,6 +20,8 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `tienda_fito`
 --
+CREATE DATABASE IF NOT EXISTS `tienda_fito` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+USE `tienda_fito`;
 
 -- --------------------------------------------------------
 

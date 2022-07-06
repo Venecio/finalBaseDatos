@@ -25,24 +25,24 @@ $rows = mysqli_num_rows($resultado);
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="shortcut icon" href="./recursos/icon.png" type="image/x-icon">
     <link rel="stylesheet" href="estilosArticulos.css">
     <title>Tienda Fito</title>
 
 </head>
 
-<body>
+<body >
     <nav class="menuNavegacion">
         <h3 class="topAviso">El precio del envio varía según su localización</h3>
         <ul class="UlMenu">
             <a href="index.php"><li>Inicio</li></a>
             <li>Novedades</li>
-            <h2 class="fitoLogo">Tienda <span class="spanFito">Fito</span></h2>
             <li>Ofertas</li>
+            <li class="logoFito"><img src="./recursos/icon2.png" style="height:100px"></li>
             <li>Contactame</li>
-            <li class="navOpcionUsuario"><a href="./carrito/historialcompras.php"><i class="fas fa-history"></i>Compras</a></li>
            <li class="navOpcionUsuario"><a href="./carrito/vercarrito.php"><i class="fas fa-shopping-cart">Carrito <?php if (isset($_SESSION['username'])){ echo "(".$rows.")"; }else{}?></i></a></li>
            <div class="dropdown">
-                <li class="dropbtn">Usuario</li>
+                <li class="dropbtn"> Usuario</i></li>
                 <div class="dropdown-content">
                     <?php
                         if (!isset($_SESSION['username'])) {?>
@@ -86,8 +86,8 @@ $rows = mysqli_num_rows($resultado);
         </div>
     </div>
  <br>
-
-
+ <br>
+ <br>
     <div class="contenedor">
         <div class="contenedor-ropa">
             <div class="carta-ropa" style="background-image:linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)

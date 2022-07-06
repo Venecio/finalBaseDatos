@@ -58,16 +58,3 @@ body{
 }
 
 /*Icono carrito */
-i{
-    
-   display: inline-block;
-   
-   
-}
-.carritoLi{
-    color: black;
-    
-    display:block;
-    
-
-}

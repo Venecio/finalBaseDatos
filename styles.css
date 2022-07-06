@@ -7,33 +7,35 @@
 }
 .UlMenu{
     list-style-type: none;
-    
     padding: 15px;
-    display:inline-block;
-   
-    
+    position: relative;
+    top: 50%;
+    margin-top: -10px;
+    width: 100%;
+    display: inline-block;
+    text-align: center;
+    box-shadow: 0 4px 2px -2px gray;
 }
 li {
-    display: inline;
+    display: inline-block;
     margin: 0px 30px;
-   
     font-size: 18px;
-   
+   text-align: left;
   }
 .navOpcionUsuario{
     color:red;
-    
-    display:inline-block;
+    text-align: right;
+   
 }
-.fitoLogo{
-    display: inline-block;
-    font-size: 30px;
-    font-family: 'Architects Daughter', cursive;
-    text-align: center;
+.logoFito{
+  position: relative;
+  
+  
 }
-.spanFito{
-    color: red;
-}
+
+
+
+
 .topAviso{
     background-color: black;
     color: white;
@@ -60,11 +62,14 @@ footer{
     font-size: 16px;
     border: none;
     cursor: pointer;
+    
   }
   
   .dropdown {
     position: relative;
     display: inline-block;
+
+
   }
   
   .dropdown-content {
@@ -92,3 +97,99 @@ footer{
   .dropdown:hover .dropbtn {
     background-color: #3e8e41;
   }
+
+  /*Registrarse*/
+  .formulario2{
+    background-color: rgba(255, 255, 255, 0.486);
+    text-align: center;
+    border-radius: 4%;
+    
+    
+  }
+  
+  .titulo{
+    color: black;
+  }
+  
+  .contenedorFormulario{
+  
+   
+    margin:auto;
+    
+  }
+  .bodyRegistro,.htmlRegistro{
+    background-image: url(recursos/fondo-registro.jpg);
+    display:flex;
+    height:100%;
+    width:100%;
+  }
+  input{
+    padding: 10px;
+    border-radius: 1px solid;
+    margin: 5px;
+    
+  }
+img{
+    height: 200px;
+  
+  }
+.boton{
+  
+}
+
+/*Estilo Login */
+.body-login,.html-login{
+  background-image: url("recursos/jans.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  display:flex;
+  height:100%;
+  width:100%;
+}
+.formulario{
+  background-color: rgba(148, 137, 137, 0.61);
+  text-align: center;
+  border-radius: 4%;
+  padding: 10px;
+
+}
+.contenedor-login{
+  margin:auto;
+  
+}
+/*IMagen de tabla carrito */
+.imagenTabla{
+  height: 30px;
+  width: 30px;
+}
+
+/* Estilo Carrito */
+.tabla-container{
+  display: flex;
+  flex-direction: column;
+  
+}
+.tabla-carrito {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 40%;
+  margin: 0;
+ 
+}
+.tabla-carrito td, .tabla-carrito th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+.tabla-carrito tr:hover {background-color: #ddd;}
+.tabla-carrito th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #171817;
+  color: white;
+  font-size: 15px;
+  
+}
+.cth2{
+  text-align: center;
+}
