@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/c0bb3670ef.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="shortcut icon" href="./recursos/icon.png" type="image/x-icon">
+    <link rel="stylesheet" href="estilosArticulos.css">
+    <title>Tienda Fito</title>
+
+</head>
+
+<body class="bodyQS">
+    <nav class="menuNavegacion">
+        <h3 class="topAviso">El precio del envio varía según su localización</h3>
+        <ul class="UlMenu">
+            <a href="index.php">
+                <li>Inicio</li>
+            </a>
+            <a href="quienesSomos.html">
+                <li>Quienes somos</li>
+            </a>
+            <a href="guiaTalles.html">
+                <li>Guia de talles</li>
+                <li class="logoFito"><img src="./recursos/icon2.png" style="height:100px"></li>
+                <li>Contactame</li>
+                <li class="navOpcionUsuario"><a href="./carrito/vercarrito.php"><i class="fas fa-shopping-cart">Carrito
+                            <?php if (isset($_SESSION['username'])){ echo "(".$rows.")"; }else{}?></i></a></li>
+                <div class="dropdown">
+                    <li class="dropbtn"> Usuario</i></li>
+                    <div class="dropdown-content">
+
+                    </div>
+                </div>
+        </ul>
+    </nav>
+    <div class="container">
+        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                <li data-target="#myCarousel" data-slide-to="1"></li>
+            </ol>
+
+
+            <div class="carousel-inner">
+                <div class="item active">
+                    <img src="recursos/banner1.png" alt="Los Angeles" style="width:100%;">
+                </div>
+
+                <div class="item">
+                    <img src="recursos/banner2.png" alt="Chicago" style="width:100%;">
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+    <br>
+    <br>
+    <br>
+    <div class="about-section">
+        <h1>Sobre nosotros</h1>
+        <p>Somos una tienda que lleva mas de dos anios de servicio, ofrecemos todo tipo de indumentaria a todo tipo de
+            personas, tratamos de traer la mayor variedad en lo posible.</p>
+    </div>
+
+    <h2 style="text-align:center">Tienda Fito te da una calidad bienvenida a nuestra tienda online</h2>
+    <div class="row">
+        <div class="column">
+            <div class="card">
+                <img src="./recursos/qcBAnXMKi.png" alt="about us" style="width:100%">
+                <div class="containerAU">
+                    <h2>Quienes somos</h2>
+
+                    <p><br>
+                        Nuestra tienda nacio con el deseo de progresar economicamente, por lo cual nos esta yendo bien y
+                        podemos seguir ofreciendo nuestros servicios al mejor precio.<br>
+                        Esperamos contar con su apoyo en el futuro y despues de todo estamos para servirte y asegurarte
+                        de que encuentres el look perfecto para cada ocasión.</p>
+
+
+                </div>
+            </div>
+        </div>
+
+        <div class="column">
+            <div class="card">
+                <img src="./recursos/qcBAnXMKi.png" alt="mision" style="width:100%">
+                <div class="containerAU">
+                    <h2>Nuestra misión </h2>
+                    <p class="title"></p>
+                    <p> Nuestra misión es marcar la diferencia a través de nuestro servicio, manteniéndonos a la
+                        vanguardia de las tendencias de la moda y brindando a los clientes lo que desean.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="column">
+            <div class="card">
+                <img src="./recursos/qcBAnXMKi.png" alt="vision" style="width:100%">
+                <div class="containerAU">
+                    <h2>Nuestra visión</h2>
+                    <p> Nuestra visión es cambiar la forma en que nuestra sociedad se conecta con la industria de la
+                        moda proporcionando a nuestros clientes productos que se obtienen de manera ética y responsable.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+
+</html>

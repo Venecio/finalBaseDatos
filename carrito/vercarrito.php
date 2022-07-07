@@ -33,7 +33,7 @@ require("../conexion/conexion.php");
             <li class="logoFito"><img src="../recursos/icon2.png" style="height:100px"></li>
             <li>Ofertas</li>
             <li>Contactame</li>
-            <li class="navOpcionUsuario"><a href="./carrito/vercarrito.php"><i class="fas fa-shopping-cart">Carrito <?php if (isset($_SESSION['username'])) {
+            <li class="navOpcionUsuario"><a href="vercarrito.php"><i class="fas fa-shopping-cart">Carrito <?php if (isset($_SESSION['username'])) {
                                                                                                                         echo "(" . $rows . ")";
                                                                                                                     } else {
                                                                                                                     } ?></i></a></li>
@@ -41,6 +41,7 @@ require("../conexion/conexion.php");
                 <li class="dropbtn">Usuario</li>
                 <div class="dropdown-content">
                     <?php
+                    session_start();
                     if (!isset($_SESSION['username'])) { ?>
                         <a href="../login/login.php">Ingresa</a>
                         <a href="../login/registrarse.html">Creá tu cuenta</a>
@@ -56,7 +57,7 @@ require("../conexion/conexion.php");
         </ul>
     </nav>
     <?php
-    session_start();
+    
     $id_user = $_SESSION['id_user'];
     $consulta = "SELECT *, SUM(productos.producto_precio) as producto_precio2, count(productos.producto_nombre) as cant_productos
                 FROM compras,productos,usuarios

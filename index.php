@@ -1,13 +1,12 @@
 <?php
 require("./conexion/conexion.php");
 session_start();
-if (isset($_SESSION['username'])){
-$id_user = $_SESSION['id_user'];
-$consulta = "SELECT * FROM compras WHERE id_user = '$id_user' and estado_compra = 0";
-$resultado = mysqli_query($conexion, $consulta);
-$rows = mysqli_num_rows($resultado);
-}else{
-
+if (isset($_SESSION['username'])) {
+    $id_user = $_SESSION['id_user'];
+    $consulta = "SELECT * FROM compras WHERE id_user = '$id_user' and estado_compra = 0";
+    $resultado = mysqli_query($conexion, $consulta);
+    $rows = mysqli_num_rows($resultado);
+} else {
 }
 ?>
 <!DOCTYPE html>
@@ -31,32 +30,40 @@ $rows = mysqli_num_rows($resultado);
 
 </head>
 
-<body >
+<body>
     <nav class="menuNavegacion">
         <h3 class="topAviso">El precio del envio varía según su localización</h3>
         <ul class="UlMenu">
-            <a href="index.php"><li>Inicio</li></a>
-            <li>Novedades</li>
-            <li>Ofertas</li>
-            <li class="logoFito"><img src="./recursos/icon2.png" style="height:100px"></li>
-            <li>Contactame</li>
-           <li class="navOpcionUsuario"><a href="./carrito/vercarrito.php"><i class="fas fa-shopping-cart">Carrito <?php if (isset($_SESSION['username'])){ echo "(".$rows.")"; }else{}?></i></a></li>
-           <div class="dropdown">
-                <li class="dropbtn"> Usuario</i></li>
-                <div class="dropdown-content">
-                    <?php
-                        if (!isset($_SESSION['username'])) {?>
+            <a href="index.php">
+                <li>Inicio</li>
+            </a>
+            <a href="quienesSomos.html">
+                <li>Quienes somos</li>
+            </a>
+            <a href="guiaTalles.html">
+                <li>Guia de talles</li>
+                <li class="logoFito"><img src="./recursos/icon2.png" style="height:100px"></li>
+                <li>Contactame</li>
+                <li class="navOpcionUsuario"><a href="./carrito/vercarrito.php"><i class="fas fa-shopping-cart">Carrito <?php if (isset($_SESSION['username'])) {
+                                                                                                                            echo "(" . $rows . ")";
+                                                                                                                        } else {
+                                                                                                                        } ?></i></a></li>
+                <div class="dropdown">
+                    <li class="dropbtn"> Usuario</i></li>
+                    <div class="dropdown-content">
+                        <?php
+                        if (!isset($_SESSION['username'])) { ?>
                             <a href="login/login.php">Ingresa</a>
                             <a href="login/registrarse.html">Creá tu cuenta</a>
                         <?php
-                        }else{?>
+                        } else { ?>
                             <a href="carrito/historialcompras.php">Compras</a>
                             <a href="login/cerrarsesion.php">Cerrar Sesion</a>
-                            <?php
+                        <?php
                         }
                         ?>
+                    </div>
                 </div>
-            </div>
         </ul>
     </nav>
     <div class="container">
@@ -64,10 +71,8 @@ $rows = mysqli_num_rows($resultado);
             <ol class="carousel-indicators">
                 <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
                 <li data-target="#myCarousel" data-slide-to="1"></li>
-                <li data-target="#myCarousel" data-slide-to="2"></li>
             </ol>
 
-            
             <div class="carousel-inner">
                 <div class="item active">
                     <img src="recursos/banner1.png" alt="Los Angeles" style="width:100%;">
@@ -76,18 +81,14 @@ $rows = mysqli_num_rows($resultado);
                 <div class="item">
                     <img src="recursos/banner2.png" alt="Chicago" style="width:100%;">
                 </div>
-
-                <div class="item">
-                    <img src="recursos/banner3.png" alt="New york" style="width:100%;">
-                </div>
             </div>
 
 
         </div>
     </div>
- <br>
- <br>
- <br>
+    <br>
+    <br>
+    <br>
     <div class="contenedor">
         <div class="contenedor-ropa">
             <div class="carta-ropa" style="background-image:linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)

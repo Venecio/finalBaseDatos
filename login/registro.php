@@ -37,5 +37,5 @@ if ($filas < 1) {
 } elseif ($filas2 != 0) {
     echo "Ya existe un usuario registrado a ese correo electronico";
 }
-mysqli_free_result($resultado);
+
 mysqli_close($conexion);

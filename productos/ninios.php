@@ -24,30 +24,34 @@
             <a href="../index.php">
                 <li>Inicio</li>
             </a>
-            <li>Novedades</li>
-            <h2 class="fitoLogo">Tienda <span class="spanFito">Fito</span></h2>
-            <li>Ofertas</li>
-            <li>Contactame</li>
-            <li class="navOpcionUsuario"><a href="../carrito/vercarrito.php"><i class="fas fa-shopping-cart">Carrito <?php if (isset($_SESSION['username'])) {
+            <a href="../quienesSomos.html">
+                <li>Quienes somos</li>
+            </a>
+            <a href="../guiaTalles.html">
+                <li>Guia de talles</li>
+                <li class="logoFito"><img src="../recursos/icon2.png" style="height:100px"></li>
+                <li>Contactame</li>
+                <li class="navOpcionUsuario"><a href="../carrito/vercarrito.php"><i class="fas fa-shopping-cart">Carrito <?php if (isset($_SESSION['username'])) {
                                                                                                                             echo "(" . $rows . ")";
                                                                                                                         } else {
                                                                                                                         } ?></i></a></li>
-            <div class="dropdown">
-                <li class="dropbtn">Usuario</li>
-                <div class="dropdown-content">
-                    <?php
-                    if (!isset($_SESSION['username'])) { ?>
-                        <a href="../login/login.php">Ingresa</a>
-                        <a href="../login/registrarse.html">Creá tu cuenta</a>
-                    <?php
-                    } else { ?>
-                        <a href="../carrito/historialcompras.php">Compras</a>
-                        <a href="../login/cerrarsesion.php">Cerrar Sesion</a>
-                    <?php
-                    }
-                    ?>
+                <div class="dropdown">
+                    <li class="dropbtn"> Usuario</i></li>
+                    <div class="dropdown-content">
+                        <?php
+                        session_start();
+                        if (!isset($_SESSION['username'])) { ?>
+                            <a href="../login/login.php">Ingresa</a>
+                            <a href="../login/registrarse.html">Creá tu cuenta</a>
+                        <?php
+                        } else { ?>
+                            <a href="../carrito/historialcompras.php">Compras</a>
+                            <a href="../login/cerrarsesion.php">Cerrar Sesion</a>
+                        <?php
+                        }
+                        ?>
+                    </div>
                 </div>
-            </div>
         </ul>
     </nav>
     <div class="container">
@@ -55,7 +59,7 @@
             <ol class="carousel-indicators">
                 <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
                 <li data-target="#myCarousel" data-slide-to="1"></li>
-                <li data-target="#myCarousel" data-slide-to="2"></li>
+
             </ol>
 
 
@@ -68,9 +72,6 @@
                     <img src="../recursos/banner2.png" alt="Chicago" style="width:100%;">
                 </div>
 
-                <div class="item">
-                    <img src="../recursos/banner3.png" alt="New york" style="width:100%;">
-                </div>
             </div>
 
 

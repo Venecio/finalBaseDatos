@@ -12,7 +12,7 @@ $resultado=mysqli_query($conexion,$consulta);
 $filas=mysqli_num_rows($resultado);
 
 if($filas>0){
-    session_start();
+     
     $row= mysqli_fetch_assoc($resultado);
     $id_user=$row['id_user'];
     $_SESSION['username']=$user;
