@@ -79,26 +79,26 @@
     </div>
     <br>
 
-    <div class="contenedor">
-        <?php
-        require("../conexion/conexion.php");
-        $consulta = "SELECT * FROM productos WHERE producto_tipo = 'remera'";
-        $result = mysqli_query($conexion, $consulta);
-        while ($row = mysqli_fetch_array($result)) {
-
-        ?>
-
-            <div class="item">
-                <?php $path = $row['producto_imagen']; ?>
-                <img src=<?php echo "../recursos/$path"; ?> width="200" height="200"><br>
-                <?php echo $row['producto_nombre'] ?><br>
-                <?php echo $row['producto_talle'] ?><br>
-                <?php echo "$" . $row['producto_precio'] ?><br>
-                <?php echo '<a class="comprarbttn" href="' . htmlspecialchars("../carrito/carrito.php?id=" . urlencode($row['id_producto'])) . '" >Comprar</a>' ?>
-            </div>
-        <?php
-        }
-        ?>
+    <div class="contenedor-decontenedores">
+        <div class="contenedor-cartas">
+            <?php
+            require("../conexion/conexion.php");
+            $consulta = "SELECT * FROM productos WHERE producto_tipo = 'remera'";
+            $result = mysqli_query($conexion, $consulta);
+            while ($row = mysqli_fetch_array($result)) {
+            ?>
+                <div class="carta">
+                    <?php $path = $row['producto_imagen']; ?>
+                    <img src=<?php echo "../recursos/$path"; ?> width="200" height="200"><br>
+                    <?php echo $row['producto_nombre'] ?><br>
+                    <?php echo $row['producto_talle'] ?><br>
+                    <?php echo "$" . $row['producto_precio'] ?><br>
+                    <?php echo '<a class="comprarbttn" href="' . htmlspecialchars("../carrito/carrito.php?id=" . urlencode($row['id_producto'])) . '" >Agregar al carrito</a>' ?>
+                </div>
+            <?php
+            }
+            ?>
+        </div>
     </div>
 
 </body>

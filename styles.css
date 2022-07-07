@@ -247,3 +247,40 @@ html {
     display: block;
   }
 }
+/*estilo footer*/
+
+.piePag {
+  color: white;
+}
+
+#piePagina {
+  bottom: 0;
+  width: 100%;
+  height: 100px;
+  margin: auto;
+  text-align: left;
+  font-family: 'Poppins', sans-serif;
+  display: inline-block;
+  background-color: #302c2c;
+}
+
+#iconoFA {
+  display: inline-block;
+  color: rgba(255, 255, 255, 0.637);
+  margin-right: 7px;
+  text-decoration: none;
+}
+
+.imagenVenecio {
+  border-radius: 50%;
+  height: 40px;
+}
+
+.tablaFooter {
+  background-color: #302c2c;
+}
+
+.th2 {
+  text-align: center;
+  color: white;
+}

@@ -29,9 +29,10 @@ require("../conexion/conexion.php");
             <a href="../index.php">
                 <li>Inicio</li>
             </a>
-            <li>Novedades</li>
+            <li>Quienes Somos</li>
+           
+            <li>Guia de talles</li>
             <li class="logoFito"><img src="../recursos/icon2.png" style="height:100px"></li>
-            <li>Ofertas</li>
             <li>Contactame</li>
             <li class="navOpcionUsuario"><a href="vercarrito.php"><i class="fas fa-shopping-cart">Carrito <?php if (isset($_SESSION['username'])) {
                                                                                                                         echo "(" . $rows . ")";

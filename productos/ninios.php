@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 
     <meta charset="UTF-8">
@@ -18,7 +19,7 @@
 </head>
 
 <body>
-<nav class="menuNavegacion">
+    <nav class="menuNavegacion">
         <h3 class="topAviso">El precio del envio varía según su localización</h3>
         <ul class="UlMenu">
             <a href="../index.php">
@@ -32,9 +33,9 @@
                 <li class="logoFito"><img src="../recursos/icon2.png" style="height:100px"></li>
                 <li>Contactame</li>
                 <li class="navOpcionUsuario"><a href="../carrito/vercarrito.php"><i class="fas fa-shopping-cart">Carrito <?php if (isset($_SESSION['username'])) {
-                                                                                                                            echo "(" . $rows . ")";
-                                                                                                                        } else {
-                                                                                                                        } ?></i></a></li>
+                                                                                                                                echo "(" . $rows . ")";
+                                                                                                                            } else {
+                                                                                                                            } ?></i></a></li>
                 <div class="dropdown">
                     <li class="dropbtn"> Usuario</i></li>
                     <div class="dropdown-content">
@@ -65,11 +66,11 @@
 
             <div class="carousel-inner">
                 <div class="item active">
-                    <img src="../recursos/banner1.png" alt="Los Angeles" style="width:100%;">
+                    <img src="../recursos/banner1.png" alt="banner info" style="width:100%;">
                 </div>
 
                 <div class="item">
-                    <img src="../recursos/banner2.png" alt="Chicago" style="width:100%;">
+                    <img src="../recursos/banner2.png" alt="Banner info" style="width:100%;">
                 </div>
 
             </div>
@@ -78,27 +79,26 @@
         </div>
     </div>
     <br>
-
-    <div class="contenedor">
-        <?php
-        require("../conexion/conexion.php");
-        $consulta = "SELECT * FROM productos WHERE producto_tipo = 'ninio'";
-        $result = mysqli_query($conexion, $consulta);
-        while ($row = mysqli_fetch_array($result)) {
-
-        ?>
-
-            <div class="item">
-                <?php $path = $row['producto_imagen']; ?>
-                <img src=<?php echo "../recursos/$path"; ?> width="200" height="200"><br>
-                <?php echo $row['producto_nombre'] ?><br>
-                <?php echo $row['producto_talle'] ?><br>
-                <?php echo "$" . $row['producto_precio'] ?><br>
-                <?php echo '<a class="comprarbttn" href="' . htmlspecialchars("../carrito/carrito.php?id=" . urlencode($row['id_producto'])) . '" >Comprar</a>' ?>
-            </div>
-        <?php
-        }
-        ?>
+    <div class="contenedor-decontenedores">
+        <div class="contenedor-cartas">
+            <?php
+            require("../conexion/conexion.php");
+            $consulta = "SELECT * FROM productos WHERE producto_tipo = 'ninios'";
+            $result = mysqli_query($conexion, $consulta);
+            while ($row = mysqli_fetch_array($result)) {
+            ?>
+                <div class="carta">
+                    <?php $path = $row['producto_imagen']; ?>
+                    <img src=<?php echo "../recursos/$path"; ?> width="200" height="200"><br>
+                    <?php echo $row['producto_nombre'] ?><br>
+                    <?php echo $row['producto_talle'] ?><br>
+                    <?php echo "$" . $row['producto_precio'] ?><br>
+                    <?php echo '<a class="comprarbttn" href="' . htmlspecialchars("../carrito/carrito.php?id=" . urlencode($row['id_producto'])) . '" >Agregar al carrito</a>' ?>
+                </div>
+            <?php
+            }
+            ?>
+        </div>
     </div>
 
 </body>
